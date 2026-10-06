@@ -1,10 +1,11 @@
 # Come funziona questa pagina
 
-Tre immagini animate (SVG) messe in fila dal `README.md`. GitHub non permette programmi nella pagina del profilo,
+Quattro immagini animate (SVG) messe in fila dal `README.md`. GitHub non permette programmi nella pagina del profilo,
 ma fa muovere le animazioni che stanno dentro le immagini.
 
 | File | Cosa è | Come si rifà |
 |---|---|---|
+| `banner.svg` | il logo Espandity che si disegna e la frase che entra parola per parola | `python scripts/make_banner.py` (caratteri Sora in `assets/font`) |
 | `cubo-ascii.svg` | il Cubo di Espandity fatto di lettere, che si scrive riga per riga | `python scripts/make_ascii_svg.py` (legge `assets/cubo.pgm`) |
 | `info-card.svg` | la scheda accanto, stile terminale | cambia `RIGHE` in `scripts/make_info_card.py` e rilancialo |
 | `contrib-heatmap.svg` | il calendario delle attività, aggiornato ogni giorno | lo rifà da solo GitHub Actions (`.github/workflows/aggiorna-profilo.yml`) |
@@ -15,3 +16,4 @@ ma fa muovere le animazioni che stanno dentro le immagini.
 - Le attività nei progetti privati si vedono solo se è acceso «Include private contributions on my profile»
   in https://github.com/settings/profile.
 - Colori: quelli dello stile Espandity (rosa `#E0457B`, arancio `#F2994A`, turchese `#3FC1E0` solo per accenti).
+- Foto profilo: `assets/foto-profilo-espandity.png` (simbolo del logo su nero, 1024×1024).

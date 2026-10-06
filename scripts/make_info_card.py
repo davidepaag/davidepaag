@@ -18,15 +18,15 @@ STATIC = os.environ.get("STATIC") == "1"
 
 TITOLO = "espandity@github"
 RIGHE = [
-    ("Chi", "Espandity, agenzia di contenuti social"),
-    ("Fa", "caroselli, video e piani editoriali"),
-    ("", "con l'intelligenza artificiale"),
-    ("Ora", "una piattaforma che crea, controlla"),
-    ("", "e programma i post da sola"),
-    ("Strumenti", "Claude · OpenAI · Supabase"),
-    ("", "Railway · Lovable · Metricool"),
-    ("Social", "Instagram · Facebook · TikTok"),
-    ("", "Threads · LinkedIn · Pinterest"),
+    ("Chi", "Davide, creatore AI"),
+    ("Agenzia", "Espandity"),
+    ("Crea", "caroselli, video e grafiche"),
+    ("", "per i social, con l'intelligenza"),
+    ("", "artificiale"),
+    ("Ora", "sistemi che pensano, creano e"),
+    ("", "pubblicano contenuti ogni giorno"),
+    ("Per chi", "brand e professionisti che"),
+    ("", "vogliono crescere sui social"),
     ("Mascotte", "il Cubo, qui accanto"),
     ("Base", "Italia"),
 ]
