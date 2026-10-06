@@ -1,0 +1,38 @@
+name: Aggiorna il calendario del profilo
+
+"on":
+  schedule:
+    - cron: "17 5 * * *"   # ogni giorno alle 5:17 UTC
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/aggiorna-profilo.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: aggiorna-profilo
+  cancel-in-progress: false
+
+jobs:
+  calendario:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - run: python scripts/fetch_contributions.py davidepaag
+      - run: python scripts/render_heatmap_svg.py
+      - name: Salva se è cambiato
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/contributions.json contrib-heatmap.svg
+          git diff --cached --quiet && echo "niente di nuovo" && exit 0
+          git commit -m "Aggiorna il calendario delle attività [skip ci]"
+          git push
