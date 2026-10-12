@@ -1,0 +1,8 @@
+{
+  "name": "re-lab",
+  "private": true,
+  "description": "Laboratorio di reverse engineering e strumenti video",
+  "dependencies": {
+    "rea-agents": "6.4.0"
+  }
+}
